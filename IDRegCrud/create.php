@@ -8,14 +8,13 @@ if (!empty($_POST)) {
     // Set-up the variables that are going to be inserted, we must check if the POST variables exist if not we can default them to blank
     $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
     // Check if POST variable "name" exists, if not default the value to blank, basically the same for all variables
-    $idnumber = isset($_POST['idnumber']) ? $_POST['idnumber'] : '';
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $created = isset($_POST['created']) ? $_POST['created'] : date('Y-m-d H:i:s');
     // Insert new record into the contacts table
-    $stmt = $pdo->prepare('INSERT INTO Student ID Registration VALUES (?, ?, ?, ?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO contacts VALUES (?, ?, ?, ?, ?, ?)');
     $stmt->execute([$id, $name, $email, $phone, $title, $created]);
     // Output message
     $msg = 'Created Successfully!';
@@ -25,9 +24,8 @@ if (!empty($_POST)) {
 <?=template_header('Create')?>
 
 <div class="content update">
-    <h2>Create Contact</h2>
+    <h2>Register Now!</h2>
     <form action="create.php" method="post">
-        <label for="idnumber">ID Number</label>
         <label for="id">ID</label>
         <label for="name">Name</label>
         <input type="text" name="id" placeholder="26" value="auto" id="id">

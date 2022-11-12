@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Read')?>
 
 <div class="content update">
-    <h2>Update Contact #<?=$contact['id']?></h2>
+    <h2>Update Data #<?=$contact['id']?></h2>
     <form action="update.php?id=<?=$contact['id']?>" method="post">
         <label for="id">ID</label>
         <label for="name">Name</label>

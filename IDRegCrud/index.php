@@ -8,10 +8,9 @@ include 'functions.php';
 <?=template_header('Home')?>
 
 <div class="content">
-	<h2>WELCOME!</h2>
-	<p>We welcome you to the <b>UNIVERSITY OF THE CORDILLERAS!</b></p>
-	
-	<p>Complete the process and get your Unique Identification Number as a UCian!</p>
+	<h2>Welcome!</h2>
+	<p>Welcome to the University of the Cordilleras!</p>
+	<p>Complete your data to get your ID number and be part of the growing UCians Family!</p>
 </div>
 
 <?=template_footer()?>
